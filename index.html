@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A beautiful animated birthday card">
+    <title>Happy Birthday, My Love! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="balloon-container"></div>
+    <div id="petals-container"></div>
+    
+    <!-- Secret Easter Egg Button -->
+    <div class="secret-btn" id="secretBtn">💖</div>
+    
+    <div class="container" id="mainContainer">
+        <div class="card-wrapper" id="cardWrapper">
+            <div class="envelope back"></div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-message">
+                        <h3>Happyy Birthdayy BYYY! 🎉🎂</h3>
+                        <p>Selamatt ulang tahun yahh. Aku berharap di usia yang baru ini kamu makin kuat, makin sehat, dan selalu diberi kebahagiaan. Semoga semua harapan, impian, dan target yang kamu punya bisa tercapai satu per satu tahun ini. Dan aku juga akan selalu berusaha untuk support kamuuu, nemenin dan nyemangatin kamu sebisa aku. 🤍</p>
+                        <p>Pokoknya semoga tahun ini jadi tahun yang lebih baik, lebih bahagia, dan penuh hal-hal baik buat kamu. Have a wonderful birthdayy! ✨🥳</p>
+                    </div>
+                    <div class="cake">
+                        🎂
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Question Modal -->
+            <div class="question-prompt" id="questionPrompt">
+                <h2>Do you want a surprise?</h2>
+                <div class="buttons">
+                    <button id="btnYes" class="btn yes">Yes</button>
+                    <button id="btnNo" class="btn no">No</button>
+                </div>
+            </div>
+
+            <div class="envelope front">
+                <div class="flap"></div>
+                
+                <!-- Decorations -->
+                <div class="stamp">💌</div>
+                <div class="decorations">
+                    <div class="heart h1">❤️</div>
+                    <div class="heart h2">✨</div>
+                    <div class="heart h3">💖</div>
+                    <div class="heart h4">🎀</div>
+                </div>
+
+                <div class="photo-frame">
+                    <img src="photo.jpg" onerror="this.onerror=null; this.src='gift.png';" alt="Photo" class="envelope-image" id="envelopeImage">
+                </div>
+                
+                <div class="sub-text">For my amazing girl</div>
+                <div class="tap-text" id="tapText">HAPPY BIRTHDAY</div>
+            </div>
+        </div>
+
+        <!-- Options Container (appears after card opens) -->
+        <div class="options-container" id="optionsContainer">
+            <button class="option-btn" id="opt1">Museum</button>
+            <button class="option-btn" id="opt2">10 Reasons Why</button>
+            <button class="option-btn" id="opt3">Make a Wish</button>
+        </div>
+
+    </div>
+
+    <!-- Music Player Widget -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-controls">
+            <button id="btnPrev" class="ctrl-btn">⏮</button>
+            <button id="btnPlay" class="ctrl-btn">⏸</button>
+            <button id="btnNext" class="ctrl-btn">⏭</button>
+        </div>
+        <p class="player-desc">Bosen ga sih lagunya? Ganti gih</p>
+    </div>
+    
+    <!-- Pics View (Button 1) -->
+    <div class="view-pics" id="viewPics">
+        <button class="btn back-btn" id="btnBackPics">⬅ Balik</button>
+        <h2>Museum Of The Beauty</h2>
+        <p class="click-hint">(Pencet Fotonya Buat Di Balik BTW)</p>
+        <div class="gallery">
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic1.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>Every time I look at you, I’m reminded of how incredibly cute and beautiful you are. Your smile has a way of making everything feel brighter, and your presence always makes ordinary moments feel special. On your birthday, I hope your day is filled with happiness, laughter, and all the love you deserve. Happy birthday, and I wish all your dreams come true this year.</p></div>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic2.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>You’re not only beautiful on the outside but also one of the sweetest people I’ve ever known. Your kindness, warmth, and adorable personality make you even more amazing every day. Happy birthday, my love. I wish you good health, endless happiness, and success in everything you work toward.</p></div>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic3.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>This photo perfectly captures how cute and gorgeous you are, but it still can’t fully show how wonderful you are as a person. You bring joy wherever you go, and I’m grateful to have you in my life. Happy birthday! I wish this year brings you countless beautiful memories and reasons to smile.</p></div>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic4.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>You have the kind of beauty that catches attention and the kind of heart that leaves a lasting impression. Every day with you feels like a gift, and seeing you happy always makes me happy too. Happy birthday, sweetheart. I wish you a year full of love, peace, and exciting new opportunities.</p></div>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic5.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>Looking at this photo makes me realize once again how lucky I am to know someone as cute and beautiful as you. Your smile is one of my favorite things in the world, and it never fails to brighten my day. Happy birthday! I wish you strength, happiness, and the courage to achieve every goal you set for yourself.</p></div>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic6.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>You’re effortlessly beautiful, incredibly adorable, and truly one of a kind. The way you laugh, smile, and care for the people around you makes you even more special. Happy birthday, my dear. I wish you endless blessings, good health, and a year filled with unforgettable moments.</p></div>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic7.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>No matter how many photos I see of you, I’ll never get tired of admiring how beautiful and cute you are. But what I love most is the wonderful person behind that smile. Happy birthday! I wish your heart stays full of happiness and that every day ahead brings something worth celebrating.</p></div>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="this.classList.toggle('flipped')">
+                <div class="gallery-item-inner">
+                    <div class="gallery-front"><img src="pic8.jpg" onerror="this.onerror=null; this.src='gift.png';"></div>
+                    <div class="gallery-back"><p>Today is all about celebrating you, the beautiful, adorable, and amazing person who makes life so much brighter. You deserve all the love, appreciation, and happiness in the world. Happy birthday, and I wish that this new chapter of your life brings you closer to every dream and hope you have. ❤️</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reasons View (Button 2) -->
+    <div class="view-reasons" id="viewReasons">
+        <button class="btn back-btn" id="btnBackReasons">⬅ Go Back</button>
+        <h2>10 Reasons Why I Love You</h2>
+        <div class="notes-board">
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#1</h3></div><div class="note-back"><p>Karena kamu lucu</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#2</h3></div><div class="note-back"><p>Karena kamu cantik</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#3</h3></div><div class="note-back"><p>Karena ngobrol sama kamu seru</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#4</h3></div><div class="note-back"><p>Karena senyum kamu manis banget frfr</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#5</h3></div><div class="note-back"><p>Karena aku nyaman jadi diri sendiri di depan kamu</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#6</h3></div><div class="note-back"><p>Karena suara kamu bikin tenang</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#7</h3></div><div class="note-back"><p>Karena aku nyaman sama kamu</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#8</h3></div><div class="note-back"><p>Karena kamu gemesin</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#9</h3></div><div class="note-back"><p>Karena kamu manis</p></div></div></div>
+            <div class="sticky-note" onclick="this.classList.toggle('flipped')"><div class="note-inner"><div class="note-front"><h3>#10</h3></div><div class="note-back"><p>Karena kamu itu kamu</p></div></div></div>
+        </div>
+    </div>
+
+    <!-- Wish View (Button 3) -->
+    <div class="view-wish" id="viewWish">
+        <button class="btn back-btn" id="btnBackWish">⬅ Go Back</button>
+        <h2 class="wish-title">Make a Wish... 🌠</h2>
+        <p class="wish-subtitle">Tulis harapan kamu dan geser buat luncurin ke bintang bintang by</p>
+        <input type="text" id="wishInput" class="wish-input" placeholder="Aku harap..." autocomplete="off">
+        <canvas id="starCanvas"></canvas>
+    </div>
+    
+    <!-- "No" Button Popup -->
+    <div id="noPopup" class="no-popup">
+        <div class="no-popup-content">
+            <img src="no_image.jpg" onerror="this.onerror=null; this.src='gift.png';" alt="Funny Popup">
+            <p>Hmmzzz</p>
+            <button class="btn" id="closeNoPopup">Yaudah Iya Aku Buka</button>
+        </div>
+    </div>
+
+    <!-- Secret Warning Popups -->
+    <div id="secretPopup" class="no-popup">
+        <div class="no-popup-content">
+            <h3 id="secretPopupText" class="secret-text-effect">Ini tombol terlarang, gaboleh di buka</h3>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button class="btn" id="secretBtnProceed">Buka</button>
+                <button class="btn" id="secretBtnCancel" style="background: #999;">Balik</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secret Photo View -->
+    <div id="secretPhotoView" class="secret-photo-view">
+        <div class="secret-photo-container">
+            <img src="secret_pic.jpg" alt="Secret Photo" onerror="this.onerror=null; this.src='rahasiabanget.jpg';">
+            <p>EMUACH WKWKWKWK</p>
+            <button class="btn" id="secretPhotoClose">Tutup Rahasia</button>
+        </div>
+    </div>
+
+    <!-- Cake Popup -->
+    <div id="cakePopup" class="no-popup">
+        <div class="no-popup-content cake-content">
+            <svg viewBox="0 0 300 80" class="curved-text-svg">
+                <path id="text-curve" d="M 20 70 Q 150 -10 280 70" fill="transparent" />
+                <text>
+                    <textPath id="blowTextPath" href="#text-curve" startOffset="50%" text-anchor="middle">
+                        Click untuk tiup
+                    </textPath>
+                </text>
+            </svg>
+            <img src="cake_on.png" id="cakeImage" onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>';" alt="Birthday Cake">
+            <h2>HAPPY BIRTHDAY</h2>
+        </div>
+    </div>
+    
+    <audio id="noSound" src="no_sound.mp3"></audio>
+    <audio id="blowSfx" src="blow_sfx.mp3"></audio>
+    <audio id="bgMusic" src="bg_music.mp3" loop></audio>
+    <audio id="music1" src="music1.mp3" loop></audio>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
